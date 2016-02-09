@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-
-    <?php
+<?php
     // try
     // {
     //     $connexion = new PDO('mysql:host=localhost; dbname=defiTrello;charset=utf8', 'root', 'pàoçi_uè!:;,');
@@ -26,7 +18,7 @@
 
     try
     {
-        $connexion = new PDO('mysql:host=localhost; dbname=defiTrello;charset=utf8', 'root', 'pàoçi_uè!:;,');
+        $connexion = new PDO('mysql:host=localhost; dbname=*********;charset=utf8', '******', '*********');
     } catch ( Exception $e ){
         die('Erreur : '.$e->getMessage() );
     }
@@ -34,18 +26,11 @@
 
     $requeteSaisie = "INSERT INTO taskList (`id`,`task`) VALUES ( NULL, $recupTask)";
     $sendDB = $connexion->query($requeteSaisie);
-    echo "GG it works !";
 
     $requeteAffiche = "SELECT * FROM taskList";
     $resultats = $connexion->query($requeteAffiche);
     while( $list = $resultats->fetch() ){
-      echo "<ul><li>"
-                .$list["task"]."
-            </li></ul>";
+      echo "<li>".$list["task"]."</li>";
     }
 
     ?>
-
-
-  </body>
-</html>

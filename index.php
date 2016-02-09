@@ -9,11 +9,12 @@
       <input type="text" id="myTask" placeholder="Ajouter une tâche">
       <button type="button" name="button" onclick="recupTask()">Ajouter</button>
     </div>
-    <div id="listTasks"> listes des tâches</div>
+    <div>listes des tâches</div>
+    <div id="listTasks">ma tâche </div>
 
   <script>
     function affiche(){
-      document.getElementById('listTasks').textContent=this.responseText;
+      document.getElementById('listTasks').innerHTML="<ul>"+this.responseText+"</ul>";
     }
 
     function recupTask(){
